@@ -1,0 +1,3 @@
+python setup.py develop
+
+# add info on file handling in a file system
