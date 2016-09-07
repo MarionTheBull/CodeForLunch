@@ -1,8 +1,10 @@
+#!/usr/bin/env python
+# The above line is the shebang line to make a python script/code executable
 import os
 import sys
 
 
-class fh:
+class fh(object):
 
     def __init__(self, filename):
         self.filename = filename
@@ -36,3 +38,24 @@ class fh:
 
         # os.remove(self.filename)
 
+# 20160907 decorators, a function that wraps a function.
+
+def mad_decorative(func):
+
+    def dooo():
+        print('Decorated!')
+        func()
+    return dooo
+
+def hello():
+    print('hello')
+
+@mad_decorative
+def world():
+    hello()
+    print('world!')
+
+# following line makes the code execute when called directly
+if __name__ == '__main__':
+    # this is what it executes.
+    world()
